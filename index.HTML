@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAVEL TOURISM - Home</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #74b9ff, #0984e3); /* Travel-themed blue gradient */
+            color: #333;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* Navigation Bar (reused and enhanced from previous) */
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0 20px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: linear-gradient(45deg, #fd79a8, #e84393);
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(253, 121, 168, 0.8);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            color: white;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Overlay for text readability */
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: slideUp 1.5s ease-out 0.5s both;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+
+        /* Keyframes for animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Tourism Places Section */
+        .places {
+            padding: 50px 20px;
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        .places h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #0984e3;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .place-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .place {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            animation: slideIn 1s ease-out both;
+            animation-delay: calc(var(--i) * 0.2s); /* Staggered animation */
+        }
+
+        .place:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .place img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 5px solid #0984e3;
+            animation: borderGlow 2s infinite alternate; /* Border animation */
+        }
+
+        @keyframes borderGlow {
+            from { border-color: #0984e3; }
+            to { border-color: #fd79a8; }
+        }
+
+        .place-content {
+            padding: 20px;
+        }
+
+        .place h3 {
+            font-size: 1.5em;
+            margin: 0 0 10px;
+            color: #333;
+        }
+
+        .place p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5em; }
+            .hero p { font-size: 1.2em; }
+            .place-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="1.html">HOME</a>
+        <a href="2.html">ABOUT</a>
+        <a href="3.html">CONTACT</a>
+        <a href="4.html">BOOKING</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Travel Tourism</h1>
+            <p>Explore the world's most breathtaking destinations</p>
+        </div>
+    </section>
+
+    <!-- Tourism Places Section -->
+    <section class="places">
+        <h2>Popular Destinations</h2>
+        <div class="place-grid">
+            <div class="place" style="--i: 1;">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Mountain Landscape">
+                <div class="place-content">
+                    <h3>Alps Adventure</h3>
+                    <p>Experience the thrill of hiking in the majestic Alps, surrounded by stunning peaks and serene lakes.</p>
+                </div>
+            </div>
+            <div class="place" style="--i: 2;">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Beach Paradise">
+                <div class="place-content">
+                    <h3>Tropical Beaches</h3>
+                    <p>Relax on pristine white sands and dive into crystal-clear waters in paradise islands.</p>
+                </div>
+            </div>
+            <div class="place" style="--i: 3;">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="City Skyline">
+                <div class="place-content">
+                    <h3>Urban Explorations</h3>
+                    <p>Discover vibrant cities with rich history, culture, and endless adventures.</p>
+                </div>
+            </div>
+            <div class="place" style="--i: 4;">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Forest Retreat">
+                <div class="place-content">
+                    <h3>Forest Retreats</h3>
+                    <p>Immerse yourself in lush forests and wildlife for a rejuvenating nature escape.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Travel Tourism. All rights reserved.</p>
+    </footer>
+</body>
+</html>
